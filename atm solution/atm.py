@@ -22,3 +22,4 @@ def withdraw(x):
         return "You have got all of your money requested"
 
 print withdraw(request)
+print "The amount available in your account is " + str(money - request)

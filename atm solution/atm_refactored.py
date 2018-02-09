@@ -1,8 +1,9 @@
 def withdraw(balance , request):
     print "current balance is " + str(balance)
+    remainder = balance
     if request > balance :
         print "You don't have enough money"
-    if request <= 0 :
+    elif request <= 0 :
         return  str(500 - request)
         
     else :

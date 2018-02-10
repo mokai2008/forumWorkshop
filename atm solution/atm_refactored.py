@@ -17,7 +17,7 @@ class ATM :
             print "You don't have enough money"
 
         elif request <= 0 :
-            print  str(500 - request)
+            print  str(self.balance - request)
             
         else :
             remainder = self.balance - request
@@ -43,10 +43,11 @@ class ATM :
                 elif request < 5:
                     print("give " + str(request))
                     request = 0
+            self.balance = remainder
 
         return remainder
 
-balance1 = 500
+balance1 = 5000
 balance2 = 1000
 		
 atm1 = ATM(balance1, "Smart Bank")

@@ -3,6 +3,7 @@ class ATM :
     def __init__(self, balance, bank_name) :
         self.balance = balance
         self.bank_name = bank_name
+        self.withdrawals_list = []
 
     def withdraw(self,request) :
        
@@ -12,12 +13,14 @@ class ATM :
         print "==" *10
 
         if request > self.balance :
-            print "You don't have enough money"
+            print "You don't have enough money\n"
 
         elif request <= 0 :
             print  str(self.balance - request)
             
         else :
+            self.withdrawals_list.append(request)
+
             self.balance -= request
 
             while request > 0:
@@ -43,9 +46,14 @@ class ATM :
                     request = 0
             
         return self.balance
+    
+    def show_withdrawals(self):
+        print "=="*25 + "\nYour withdrawals list from your " +self.bank_name+" account" + "\n" + "=="*25
+        for withdrawal in self.withdrawals_list :
+            print withdrawal
 
 balance1 = 5000
-balance2 = 1000
+balance2 = 4000
 		
 atm1 = ATM(balance1, "Smart Bank")
 atm2 = ATM(balance2, "Baraka Bank")
@@ -53,5 +61,9 @@ atm2 = ATM(balance2, "Baraka Bank")
 atm1.withdraw(277)
 atm1.withdraw(800)
 
-atm2.withdraw(900)
+atm1.show_withdrawals()
+
+atm2.withdraw(1000)
 atm2.withdraw(2000)
+
+atm2.show_withdrawals()

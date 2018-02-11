@@ -11,8 +11,6 @@ class ATM :
         print "current balance is " + str(self.balance)
         print "==" *10
 
-        remainder = self.balance
-
         if request > self.balance :
             print "You don't have enough money"
 
@@ -20,7 +18,7 @@ class ATM :
             print  str(self.balance - request)
             
         else :
-            remainder = self.balance - request
+            self.balance -= request
 
             while request > 0:
 
@@ -43,9 +41,8 @@ class ATM :
                 elif request < 5:
                     print("give " + str(request))
                     request = 0
-            self.balance = remainder
-
-        return remainder
+            
+        return self.balance
 
 balance1 = 5000
 balance2 = 1000
@@ -56,5 +53,5 @@ atm2 = ATM(balance2, "Baraka Bank")
 atm1.withdraw(277)
 atm1.withdraw(800)
 
-atm2.withdraw(100)
+atm2.withdraw(900)
 atm2.withdraw(2000)

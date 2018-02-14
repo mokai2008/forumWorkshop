@@ -5,8 +5,7 @@ class MemberStore :
         self.members.append(member)
     
     def get_all(self) :
-        for m in self.members :
-            return m.name
+        return self.members
     
     def entity_exist(self, member) :
         if member in self.members :
@@ -20,8 +19,7 @@ class PostStore:
         self.posts.append(post)
 
     def get_all(self):
-        for p in self.posts :
-            return p.title 
+        return self.posts
 
     def entity_exist(self, post) :
         if post in self.posts :

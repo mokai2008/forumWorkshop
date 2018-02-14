@@ -1,9 +1,9 @@
-class member :
+class Member :
     def __init__ (self, name, age) :
         self.name = name
         self.age = age
     
-class post :
+class Post :
     def __init__ (self, title, published_date, author_name , content) :
         self.title = title
         self.published_date = published_date

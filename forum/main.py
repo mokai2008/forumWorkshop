@@ -15,6 +15,7 @@ member_store = MemberStore()
 member_store.add(member1)
 member_store.add(member2)
 
+print(member_store.entity_exist(member1))
 print(member_store.get_by_id(1))
 member_store.delete(1)
 print(member_store.get_by_id(1))

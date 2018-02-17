@@ -8,19 +8,22 @@ class MemberStore :
   		MemberStore.last_id += 1    
     
     def get_all(self) :
-        return self.members
+        return MemberStore.members
     
     def entity_exist(self, member) :
-        if member in self.members :
-            return True
-        return False
+        result = False
+        if self.get_by_id(member.id) != None :
+            result=  True
+        return result
     
     def get_by_id(self, id):
+        result = None
         all_members = self.get_all()
         for m in all_members:
             if m.id == id:
-                return m
-            return None
+                result =  m
+            break
+        return result
 
     def delete(self, id):
         member = self.get_by_id(id)

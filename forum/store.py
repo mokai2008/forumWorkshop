@@ -29,6 +29,26 @@ class MemberStore :
         member = self.get_by_id(id)
         MemberStore.members.remove(member)
 
+    def get_by_name (self, name):
+        result = []
+        all_members = self.get_all()
+        for m in all_members :
+            if m.name == name :
+                result.append(m)
+            break
+        return result
+
+    def update(self, member):
+        result = member
+        
+        all_members = self.get_all()
+
+        for index, current_member in enumerate(all_members):
+            if current_member.id == member.id:
+                all_members[index] = member
+
+        return result
+
 class PostStore:
     posts = []
 

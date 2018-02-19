@@ -22,8 +22,7 @@ class MemberStore :
         for m in all_members:
             if m.id == id:
                 result =  m
-            break
-        return result
+            return result
 
     def delete(self, id):
         member = self.get_by_id(id)
@@ -46,8 +45,6 @@ class MemberStore :
         for index, current_member in enumerate(all_members):
             if current_member.id == member.id:
                 all_members[index] = member
-
-        return result
 
 class PostStore:
     posts = []
